@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="header_mojo">
+    <img class="header_mojo_img" src="assets/icons/icons8_phoenix_framework_125px%201.svg">
+    <p class="header_mojo_title">
+      Math Phoenix
+    </p>
+  </div>
+  <div class="header_links">
+    <button *ngFor="let link of links;let i=index" class="header_links_item" (click)="goToLink(link)">
+      {{link.name}}
+    </button>
+  </div>
+  <div class="header_role">
+    <p>Роль: {{getRole()}}</p>
+  </div>
+  <div class="header_logout">
+    <button class="header_logout_btn" (click)="logout()">
+      Выйти
+    </button>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="login">
+  <div class="login_cont">
+    <div class="login_cont_mojo">
+      <img class="login_cont_mojo_img" src="assets/icons/icons8_phoenix_framework_125px%201.svg">
+      <p class="login_cont_mojo_txt">Math Phoenix</p>
+    </div>
+    <div class="login_cont_form">
+      <p class="form_title">Signup</p>
+      <input class="form_inp" type="text" placeholder="User Name" [(ngModel)]="username">
+      <input class="form_inp" type="password" placeholder="Password" [(ngModel)]="password">
+      <input class="form_inp" type="text" placeholder="Name" [(ngModel)]="name">
+      <div>
+        <input type="radio" name="role" value="Teacher" [(ngModel)]="selectedRole">Teacher
+      </div>
+      <div>
+        <input type="radio" name="role" value="Student" [(ngModel)]="selectedRole">Student
+      </div>
+      <div class="form_actions">
+        <button class="form_actions_login" (click)="register()">
+          Signup
+        </button>
+        <button class="form_actions_signup" (click)="goToLogin()">
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

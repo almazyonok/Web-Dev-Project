@@ -1,0 +1,53 @@
+<div class="add_quiz">
+  <div class="add_quiz_title">
+    <p *ngIf="!isEditTitle">Название: {{title}}</p>
+    <button *ngIf="!isEditTitle" (click)="startEditTitle()">Изменить</button>
+    <input *ngIf="isEditTitle" type="text" placeholder="Название" [(ngModel)]="title">
+    <button *ngIf="isEditTitle" (click)="finishEditTitle()">Ок</button>
+  </div>
+  <div class="add_quiz_desc">
+    <p *ngIf="!isEditDescription">Описание: {{description}}</p>
+    <button *ngIf="!isEditDescription" (click)="startEditDesc()">Изменить</button>
+    <input *ngIf="isEditDescription" type="text" placeholder="Описание" [(ngModel)]="description">
+    <button *ngIf="isEditDescription" (click)="finishEditDesc()">Ок</button>
+  </div>
+  <div class="add_quiz_questions">
+    <div class="add_quiz_questions_item" *ngFor="let question of quiz.questions;let q = index">
+      <p class="add_quiz_questions_item_num">Вопрос {{q + 1}}</p>
+      <p class="add_quiz_questions_item_title">{{question.description}}</p>
+      <div class="add_quiz_questions_item_variants">
+        <div class="add_quiz_questions_item_variants_item" *ngFor="let variant of question.variants">
+          <input type="checkbox">
+          <p>{{variant.text}}</p>
+          <p *ngIf="variant.right">-> Правильный ответ</p>
+        </div>
+        <div class="add_quiz_questions_item_variants_add" *ngIf="isVariantAdded[q]">
+          <img src="assets/icons/plus.png" (click)="addVariant(q)">
+          <p>Добавить вариант</p>
+        </div>
+        <div class="add_quiz_questions_item_variants_inp" *ngIf="!isVariantAdded[q]">
+          <input class="add_quiz_questions_item_variants_inp_write" type="text" placeholder="Описание"
+                 [(ngModel)]="variantText[q]">
+          <div class="add_quiz_questions_item_variants_inp_check">
+            <input type="checkbox" [(ngModel)]="variantRight[q]">
+            <p>Верный</p>
+          </div>
+          <button (click)="finishVariant(q)">Ок</button>
+        </div>
+      </div>
+    </div>
+    <div class="add_quiz_questions_form" *ngIf="!isQuestionAdded">
+      <input type="text" placeholder="Вопрос" [(ngModel)]="questionDescription">
+      <button (click)="finishQuestion()">Ок</button>
+    </div>
+  </div>
+  <div class="add_quiz_btn" *ngIf="isQuestionAdded">
+    <img src="assets/icons/plus.png" (click)="addQuestion()">
+    <p>Добавить вопрос</p>
+  </div>
+  <div class="add_question">
+    <button class="add_question_btn" (click)="addQuiz()">
+      Добавить тест
+    </button>
+  </div>
+</div>

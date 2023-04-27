@@ -1,0 +1,17 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+  margin: 50px 150px 0 150px;
+  padding: 8px;
+  border-radius: 8px;
+
+  &_desc {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 500;
+    color: #008000;
+    font-family: Roboto, sans-serif;
+  }
+}

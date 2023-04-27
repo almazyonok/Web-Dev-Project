@@ -1,0 +1,18 @@
+<div class="quizes">
+  <div class="quizes_add" *ngIf="isTeacher()">
+    <img src="assets/icons/plus.png" class="quizes_add_img" (click)="goAddQuiz()">
+    <p class="quizes_add_txt">Добавить тест</p>
+  </div>
+  <p class="quizes_title">{{getTitle()}}</p>
+  <div class="quizes_item" *ngFor="let quiz of quizes">
+    <p class="quizes_item_name" (click)="goToQuiz(quiz)">
+      {{quiz.name}}
+    </p>
+    <p class="quizes_item_desc">
+      {{quiz.description}}
+    </p>
+    <p class="quizes_item_author">
+      Автор: {{quiz.author}}
+    </p>
+  </div>
+</div>

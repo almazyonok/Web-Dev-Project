@@ -1,0 +1,32 @@
+.grades {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 50px 150px 0px 150px;
+
+  &_item {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    background-color: #301B52;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #FFFFFF;
+      border: 2px solid #301B52;
+      color: #301B52;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    p {
+      margin: auto;
+    }
+  }
+}

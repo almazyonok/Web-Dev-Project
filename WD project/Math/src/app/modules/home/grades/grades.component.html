@@ -1,0 +1,5 @@
+<div class="grades">
+  <div class="grades_item" *ngFor="let grade of grades" (click)="navigateToQuizes(grade)">
+    <p>{{grade.name}}</p>
+  </div>
+</div>

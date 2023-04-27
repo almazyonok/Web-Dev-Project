@@ -1,0 +1,70 @@
+.quizes {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  margin: 50px 150px 0 150px;
+
+  &_add {
+    display: flex;
+    flex-direction: row;
+
+    &_img {
+      width: 24px;
+      height: 24px;
+      margin: auto 24px auto 0px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &_txt {
+      font-size: 20px;
+      font-weight: 700;
+      color: #301B52;
+    }
+  }
+
+  &_title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #301B52;
+    margin: 0 auto;
+  }
+
+  &_item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    border: 2px solid #301B52;
+    border-radius: 12px;
+    padding: 12px 24px;
+    margin-bottom: 20px;
+
+    &_name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #301B52;
+      margin: 0 auto;
+
+      &:hover {
+        cursor: pointer;
+        color: #DB0916;
+      }
+    }
+
+    &_desc {
+      font-size: 16px;
+      font-weight: 700;
+      color: #301B52;
+      margin: 0;
+    }
+
+    &_author {
+      font-size: 16px;
+      font-weight: 700;
+      color: #301B52;
+      margin: 0;
+    }
+  }
+}

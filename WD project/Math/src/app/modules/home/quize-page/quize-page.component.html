@@ -1,0 +1,25 @@
+<div class="quiz">
+  <p class="quiz_title">{{quiz?.name}}</p>
+  <div class="quiz_question" *ngFor="let question of quiz?.questions;let i = index">
+    <p class="quiz_question_num">
+      Вопрос № {{i + 1}}
+    </p>
+    <p class="quiz_question_desc">
+      {{question.description}}
+    </p>
+    <div class="quiz_question_vars">
+      <div class="quiz_question_vars_item" *ngFor="let variant of question.variants" >
+        <input class="quiz_question_vars_item_check" type="checkbox" (click)="changeAnswer(i,variant)">
+        <p  class="quiz_question_vars_item_txt" (click)="changeAnswer(i,variant)" >
+          {{variant.text}}  <span *ngIf="isFinished && variant.right">-> Правильный ответ </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="quiz_finish">
+    <p *ngIf="isFinished" class="quiz_finish_percent">{{message}}</p>
+    <button class="quiz_finish_btn" (click)="showPersentage()">
+      Закончить тест
+    </button>
+  </div>
+</div>
